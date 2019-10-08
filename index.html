@@ -167,34 +167,55 @@
     </div><!-- end container -->
 
     <script>
+        /* pseudocode*/
+        /*
+            -need the computr to show a target random number(19-120) when page is loaded
+            -need the user to press the buttons getting r, b, y, g cryst random value
+            -collect all the 4 cryst values and store them in a array
+            -sum all the cryst values
+            -compare the sum of cryst values with the target random number, and count win, loss, guessleft
+            -display the result to the user when win or loss
+            -reset the game */
+
         $(function () {
 
             // $("button").click(function () {
             //     $("#target-randomNum").slideToggle();
 
             let targetRanNum = Math.floor(Math.random() * (120 - 19 + 1) + 19);
-            let redCryst = Math.floor(Math.random() * (12 - 1 + 1) + 1);
-            let blueCryst = Math.floor(Math.random() * (12 - 1 + 1) + 1);
-            let yellowCryst = Math.floor(Math.random() * (12 - 1 + 1) + 1);
-            let greenCryst = Math.floor(Math.random() * (12 - 1 + 1) + 1);
+            let redCrystRanNum = Math.floor(Math.random() * (12 - 1 + 1) + 1);
+            let blueCrystRanNum = Math.floor(Math.random() * (12 - 1 + 1) + 1);
+            let yellowCrystRanNum = Math.floor(Math.random() * (12 - 1 + 1) + 1);
+            let greenCrystRanNum = Math.floor(Math.random() * (12 - 1 + 1) + 1);
             // console.log(targetRanNum);
             $("#target-randomNum").text(targetRanNum);
 
+            // let redCrystClickedNum = redCrystRanNum;
+
             $("#red").click(function () {
-                console.log(redCryst);
+                alert(redCrystRanNum);
             });
 
-            $("#blue").click(function () {
-                console.log(blueCryst);
-            });
 
-            $("#yellow").click(function () {
-                console.log(yellowCryst);
-            });
 
-            $("#green").click(function () {
-                console.log(greenCryst);
-            });
+
+            // let blueCrystClickedNum = blueCrystRanNum;
+            // let blueCrystValue = $("#blue").click(function () {
+            //     blueCrystClickedNum;
+            // });
+            // console.log(blueCrystClickedNum);
+
+            // let crystArray = [redCrystClickedNum, blueCrystClickedNum]
+            // console.log(crystArray)
+
+            // let yellowCrystValue = $("#yellow").click(function () {
+            //     yellowCrystRanNum;
+            // });
+
+            // let greenCrystValue = $("#green").click(function () {
+            //     greenCrystRanNum;
+            // });
+
 
         });
     </script>
