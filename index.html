@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <title>crystals collector</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            background: rgb(163, 200, 230);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 960px;
+            margin: 0 3% 0 16%;
+        }
+
+        h1 {
+            width: 68%;
+            text-align: center;
+            color: white;
+            background: rgb(187, 135, 56);
+            padding: 16px;
+        }
+
+        #aboutGame {
+            width: 68%;
+            color: rgb(23, 141, 82);
+            background: rgb(253, 246, 239);
+            padding: 16px;
+            clear: both;
+        }
+
+        h2 {
+            font-size: 3em;
+        }
+
+        h3,
+        #yourSum,
+        #target-randomNum,
+        #winLossScores {
+            color: black;
+            padding: 10px 16px
+        }
+
+        #target-randomNum {
+            font-size: 3em;
+            background: rgb(98, 238, 168);
+        }
+
+        #winLossScores {
+            background: rgb(136, 218, 243);
+        }
+
+        #target-randomNum,
+        #winLossScores {
+            width: 33.9%;
+            height: 200px;
+            float: left;
+        }
+
+        #crystals,
+        #totalTitle,
+        #yourTotalDisplay {
+            width: 100%;
+            float: left;
+        }
+
+        button {
+            margin-top: 16px;
+            width: 16.399%;
+            height: 110px;
+        }
+
+        #red {
+            background: rgb(165, 36, 36);
+        }
+
+        #blue {
+            background: rgb(60, 122, 202);
+        }
+
+        #yellow {
+            background: rgb(247, 225, 26);
+        }
+
+        #green {
+            background: rgb(6, 97, 6);
+        }
+
+        #yourTotalDisplay {
+            font-size: 3em;
+            padding-top: 16px;
+            padding-left: 16px;
+            width: 68%;
+            color: white;
+            height: 200px;
+            background: rgb(20, 133, 133);
+        }
+
+        #yourSum,
+        #totalTitle {
+            width: 68%;
+            color: white;
+            padding: 16px;
+            background: rgb(20, 133, 133);
+            margin-bottom: 8px;
+            margin-top: 16px;
+        }
+
+        #yourSum {
+            color: white;
+            text-align: left;
+        }
+
+        .target-container {
+            margin-top: 16px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Crystals Collector!</h1>
+        <div id="aboutGame">
+            <p>You will be given a random number at the start of the game.</p>
+
+            <p>There are four crystals below. By clicking on a crystal you will add a specific amount of points to your
+                total
+                score...</p>
+
+        </div><!--  -->
+    </div>
+
+    <div class="container">
+        <div class="target-container">
+            <div id="target-randomNum">0
+                <!-- <h2>0</h2> -->
+            </div>
+
+            <div id="winLossScores">
+                <p id="display-result"></p>
+                <p id="win">Wins: 0</p>
+                <p id="loss">Losses: 0</p>
+            </div>
+        </div><!--  -->
+
+
+        <div id="crystals">
+            <button id="red"></button>
+            <button id="blue"></button>
+            <button id="yellow"></button>
+            <button id="green"></button>
+        </div><!--  -->
+
+        <h3 id="totalTitle">Your total score is &colon;</h3>
+        <div id="yourTotalDisplay">0</div><!--  -->
+
+    </div><!-- end container -->
+
+    <script>
+        $(function () {
+
+            // $("button").click(function () {
+            //     $("#target-randomNum").slideToggle();
+
+            let targetRanNum = Math.floor(Math.random() * (120 - 19 + 1) + 19);
+            let redCryst = Math.floor(Math.random() * (12 - 1 + 1) + 1);
+            let blueCryst = Math.floor(Math.random() * (12 - 1 + 1) + 1);
+            let yellowCryst = Math.floor(Math.random() * (12 - 1 + 1) + 1);
+            let greenCryst = Math.floor(Math.random() * (12 - 1 + 1) + 1);
+            // console.log(targetRanNum);
+            $("#target-randomNum").text(targetRanNum);
+
+            $("#red").click(function () {
+                console.log(redCryst);
+            });
+
+            $("#blue").click(function () {
+                console.log(blueCryst);
+            });
+
+            $("#yellow").click(function () {
+                console.log(yellowCryst);
+            });
+
+            $("#green").click(function () {
+                console.log(greenCryst);
+            });
+
+        });
+    </script>
+
+</body>
+
+</html>
