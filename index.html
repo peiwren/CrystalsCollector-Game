@@ -179,9 +179,6 @@
 
         $(function () {
 
-            // $("button").click(function () {
-            //     $("#target-randomNum").slideToggle();
-
             let targetRanNum = Math.floor(Math.random() * (120 - 19 + 1) + 19);
             let redCrystRanNum = Math.floor(Math.random() * (12 - 1 + 1) + 1);
             let blueCrystRanNum = Math.floor(Math.random() * (12 - 1 + 1) + 1);
@@ -200,7 +197,6 @@
                     totalNum += redCrystRanNum;
                     console.log(totalNum);
                 });
-
 
                 $("#blue").click(function () {
                     $("#yourTotalNum").text(blueCrystRanNum);
@@ -227,9 +223,26 @@
                 $("#yourTotalNum").text(totalNum);
             };
 
-            sum();
+            // sum();
 
-        });
+            let yourSum = sum();
+
+            let winScore = 0;
+            let lossScore = 0;
+            if (yourSum === targetRanNum) {
+                $("#display-result").text("You win!");
+                winScore += 1;
+                $("#win").text("Wins: " + winScore);
+            } else if (yourSum !== targetRanNum) {
+                $("#display-result").text("You're not win this time!")
+                lossScore += 1;
+                $("#win").text("Losses: " + lossScore)
+
+            } else {
+
+            }
+
+        }); // end of doc ready function
     </script>
 
 </body>
