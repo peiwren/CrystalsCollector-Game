@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -69,7 +70,7 @@
 
         #crystals,
         #totalTitle,
-        #yourTotalDisplay {
+        #yourTotalNum {
             width: 100%;
             float: left;
         }
@@ -96,7 +97,7 @@
             background: rgb(6, 97, 6);
         }
 
-        #yourTotalDisplay {
+        #yourTotalNum {
             font-size: 3em;
             padding-top: 16px;
             padding-left: 16px;
@@ -106,7 +107,7 @@
             background: rgb(20, 133, 133);
         }
 
-        #yourSum,
+        #yourTotalNum,
         #totalTitle {
             width: 68%;
             color: white;
@@ -116,7 +117,7 @@
             margin-top: 16px;
         }
 
-        #yourSum {
+        #yourTotalNum {
             color: white;
             text-align: left;
         }
@@ -162,7 +163,7 @@
         </div><!--  -->
 
         <h3 id="totalTitle">Your total score is &colon;</h3>
-        <div id="yourTotalDisplay">0</div><!--  -->
+        <div id="yourTotalNum">0</div><!--  -->
 
     </div><!-- end container -->
 
@@ -190,32 +191,43 @@
             // console.log(targetRanNum);
             $("#target-randomNum").text(targetRanNum);
 
-            // let redCrystClickedNum = redCrystRanNum;
+            let totalNum = 0;
 
-            $("#red").click(function () {
-                alert(redCrystRanNum);
-            });
+            function sum() {
+
+                $("#red").click(function () {
+                    $("#yourTotalNum").text(redCrystRanNum);
+                    $("#red").attr("value", redCrystRanNum)
+                    totalNum += redCrystRanNum;
+                    console.log(totalNum);
+                });
 
 
+                $("#blue").click(function () {
+                    $("#yourTotalNum").text(blueCrystRanNum);
+                    $("#blue").attr("value", blueCrystRanNum)
+                    totalNum += blueCrystRanNum;
+                    console.log(totalNum);
+                });
 
+                $("#yellow").click(function () {
+                    $("#yourTotalNum").text(yellowCrystRanNum);
+                    $("#yellow").attr("value", yellowCrystRanNum)
+                    totalNum += yellowCrystRanNum;
+                    console.log(totalNum);
+                });
 
-            // let blueCrystClickedNum = blueCrystRanNum;
-            // let blueCrystValue = $("#blue").click(function () {
-            //     blueCrystClickedNum;
-            // });
-            // console.log(blueCrystClickedNum);
+                $("#green").click(function () {
+                    $("#yourTotalNum").text(greenCrystRanNum);
+                    $("#green").attr("value", greenCrystRanNum)
+                    totalNum += greenCrystRanNum;
+                    console.log(totalNum);
+                    $("#yourTotalNum").text(greenCrystRanNum);
+                });
+                $("#yourTotalNum").text(totalNum);
+            };
 
-            // let crystArray = [redCrystClickedNum, blueCrystClickedNum]
-            // console.log(crystArray)
-
-            // let yellowCrystValue = $("#yellow").click(function () {
-            //     yellowCrystRanNum;
-            // });
-
-            // let greenCrystValue = $("#green").click(function () {
-            //     greenCrystRanNum;
-            // });
-
+            sum();
 
         });
     </script>
