@@ -137,7 +137,7 @@
                 total
                 score...</p>
 
-        </div><!--  -->
+        </div><!-- end of aboutGame -->
     </div>
 
     <div class="container">
@@ -169,16 +169,14 @@
     <script>
         /* pseudocode*/
         /*
-            -need the computr to show a target random number(19-120) when page is loaded
-            -need the user to press the buttons getting r, b, y, g cryst random value
-            -collect all the 4 cryst values and store them in a array
-            -sum all the cryst values
-            -compare the sum of cryst values with the target random number, and count win, loss, guessleft
-            -display the result to the user when win or loss
+            -need the computer to generate a random number (between 19 and 120) at the start of the game
+            -need the user to click the button and then get each crystal random value respectively
+            -capture the value and sum them up
+            -compare the cryst values with the computer random number. If the user's total score matches the comaputer number, the user win, otherwise loss
+            -display the result to the user as win or loss
             -reset the game */
 
         $(function () {
-
             let targetRanNum = Math.floor(Math.random() * (120 - 19 + 1) + 19);
             let redCrystRanNum = Math.floor(Math.random() * (12 - 1 + 1) + 1);
             let blueCrystRanNum = Math.floor(Math.random() * (12 - 1 + 1) + 1);
@@ -188,59 +186,60 @@
             $("#target-randomNum").text(targetRanNum);
 
             let totalNum = 0;
+            let wins = 0;
+            let losses = 0;
 
-            function sum() {
-
-                $("#red").click(function () {
-                    $("#yourTotalNum").text(redCrystRanNum);
-                    $("#red").attr("value", redCrystRanNum)
-                    totalNum += redCrystRanNum;
-                    console.log(totalNum);
-                });
-
-                $("#blue").click(function () {
-                    $("#yourTotalNum").text(blueCrystRanNum);
-                    $("#blue").attr("value", blueCrystRanNum)
-                    totalNum += blueCrystRanNum;
-                    console.log(totalNum);
-                });
-
-                $("#yellow").click(function () {
-                    $("#yourTotalNum").text(yellowCrystRanNum);
-                    $("#yellow").attr("value", yellowCrystRanNum)
-                    totalNum += yellowCrystRanNum;
-                    console.log(totalNum);
-                });
-
-                $("#green").click(function () {
-                    $("#yourTotalNum").text(greenCrystRanNum);
-                    $("#green").attr("value", greenCrystRanNum)
-                    totalNum += greenCrystRanNum;
-                    // totalNum = $("#red").val() + $("#blue").val() + $("#yellow").val() + $("#green").val()
-                    console.log(totalNum);
-                    $("#yourTotalNum").text(greenCrystRanNum);
-                });
+            function reset() {
+                targetRanNum = Math.floor(Math.random() * (120 - 19 + 1) + 19);
+                $("#target-randomNum").text(targetRanNum);
+                totalNum = 0;
                 $("#yourTotalNum").text(totalNum);
+            }
+
+
+            function getWinOrLoss() {
+                if (totalNum === targetRanNum) {
+                    wins++;
+                    $("#win").text("Wins: " + wins);
+                    $("#display-result").text("You won!")
+                    reset();
+
+                } else if (totalNum > targetRanNum) {
+                    losses++;
+                    $("#loss").text("Losses: " + losses);
+                    $("#display-result").text("You lost this time, try again.")
+                    reset();
+                }
             };
 
-            // sum();
+            $("#red").click(function () {
+                totalNum += redCrystRanNum;
+                console.log(totalNum);
+                $("#yourTotalNum").text(totalNum);
+                getWinOrLoss();
+            });
 
-            let yourSum = sum();
+            $("#blue").click(function () {
+                totalNum += blueCrystRanNum;
+                console.log(blueCrystRanNum);
+                $("#yourTotalNum").text(totalNum);
+                getWinOrLoss();
+            });
 
-            let winScore = 0;
-            let lossScore = 0;
-            if (yourSum === targetRanNum) {
-                $("#display-result").text("You win!");
-                winScore += 1;
-                $("#win").text("Wins: " + winScore);
-            } else if (yourSum !== targetRanNum) {
-                $("#display-result").text("You're not win this time!")
-                lossScore += 1;
-                $("#win").text("Losses: " + lossScore)
+            $("#yellow").click(function () {
+                totalNum += yellowCrystRanNum;
+                console.log(yellowCrystRanNum);
+                $("#yourTotalNum").text(totalNum);
+                getWinOrLoss();
+            });
 
-            } else {
+            $("#green").click(function () {
+                totalNum += greenCrystRanNum;
+                console.log(greenCrystRanNum);
+                $("#yourTotalNum").text(totalNum);
+                getWinOrLoss();
 
-            }
+            });
 
         }); // end of doc ready function
     </script>
