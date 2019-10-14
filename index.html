@@ -5,161 +5,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Berkshire+Swash&display=swap" rel="stylesheet">
+    <!-- reset css -->
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <!-- my css -->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <!-- jquery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <title>crystals collector</title>
-    <style>
-        * {
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-            background: rgb(163, 200, 230);
-        }
-
-        .container {
-            width: 100%;
-            max-width: 960px;
-            margin: 0 3% 0 16%;
-        }
-
-        h1 {
-            width: 68%;
-            text-align: center;
-            color: white;
-            background: rgb(187, 135, 56);
-            padding: 16px;
-        }
-
-        #aboutGame {
-            width: 68%;
-            color: rgb(23, 141, 82);
-            background: rgb(253, 246, 239);
-            padding: 16px;
-            clear: both;
-        }
-
-        h2 {
-            font-size: 3em;
-        }
-
-        h3,
-        #yourSum,
-        #target-randomNum,
-        #winLossScores {
-            color: black;
-            padding: 10px 16px
-        }
-
-        #target-randomNum {
-            font-size: 3em;
-            background: rgb(98, 238, 168);
-        }
-
-        #winLossScores {
-            background: rgb(136, 218, 243);
-        }
-
-        #target-randomNum,
-        #winLossScores {
-            width: 33.9%;
-            height: 200px;
-            float: left;
-        }
-
-        #crystals,
-        #totalTitle,
-        #yourTotalNum {
-            width: 100%;
-            float: left;
-        }
-
-        button {
-            margin-top: 16px;
-            width: 12.399%;
-            height: 110px;
-            background: none;
-            border: none;
-            margin-left: 2.8%;
-        }
-
-        img {
-            width: 120%;
-        }
-
-        /* #red {
-            background: rgb(165, 36, 36);
-        }
-
-        #blue {
-            background: rgb(60, 122, 202);
-        }
-
-        #yellow {
-            background: rgb(247, 225, 26);
-        }
-
-        #green {
-            background: rgb(6, 97, 6);
-        } */
-
-        #yourTotalNum {
-            font-size: 3em;
-            padding-top: 16px;
-            padding-left: 16px;
-            width: 68%;
-            color: white;
-            height: 200px;
-            background: rgb(20, 133, 133);
-        }
-
-        #yourTotalNum,
-        #totalTitle {
-            width: 68%;
-            color: white;
-            padding: 16px;
-            background: rgb(20, 133, 133);
-            margin-bottom: 8px;
-            margin-top: 16px;
-        }
-
-        #yourTotalNum {
-            color: white;
-            text-align: left;
-        }
-
-        .target-container {
-            margin-top: 16px;
-        }
-    </style>
+    <script src="script.js"></script>
+    <title>crystals collector game</title>
 </head>
 
 <body>
     <div class="container">
         <h1>Crystals Collector!</h1>
         <div id="aboutGame">
-            <p>You will be given a random number at the start of the game.</p>
-
-            <p>There are four crystals below. By clicking on a crystal you will add a specific amount of points to your
-                total
-                score...</p>
-
+            <p>You will be given a random number at the start of the game. There are four crystals below. By clicking on
+                a crystal, you will add a specific amount of points to your total score. You win the game by matching
+                your total
+                score to the random number. You lose if your total score goes above the random number. The value of each
+                crystal is hidden from you until you click on it. Each time when the game starts, the game will change
+                the values of each crystal.
+            </p>
         </div><!-- end of aboutGame -->
-    </div>
 
-    <div class="container">
-        <div class="target-container">
-            <div id="target-randomNum">0
-                <!-- <h2>0</h2> -->
+        <div class="target-result-container">
+            <div>
+                <h3 id="target-randomNum">0</h3>
             </div>
 
             <div id="winLossScores">
-                <p id="display-result"></p>
+                <h5 id="display-result"></h5>
                 <p id="win">Wins: 0</p>
                 <p id="loss">Losses: 0</p>
             </div>
-        </div><!--  -->
-
+        </div><!-- end target-result-container-->
 
         <div id="crystals">
             <button id="red">
@@ -174,90 +55,16 @@
             <button id="green">
                 <img src="images/greenCryst.png " />
             </button>
-        </div><!--  -->
-
-        <h3 id="totalTitle">Your total score is &colon;</h3>
-        <div id="yourTotalNum">0</div><!--  -->
-
-    </div><!-- end container -->
-
-    <script>
-        /* pseudocode*/
-        /*
-            -need the computer to generate a random number (between 19 and 120) at the start of the game
-            -need the user to click the button and then get each crystal random value respectively
-            -capture the value and sum them up
-            -compare the cryst values with the computer random number. If the user's total score matches the comaputer number, the user win, otherwise loss
-            -display the result to the user as win or loss
-            -reset the game */
-
-        $(function () {
-            let targetRanNum = Math.floor(Math.random() * (120 - 19 + 1) + 19);
-            let redCrystRanNum = Math.floor(Math.random() * (12 - 1 + 1) + 1);
-            let blueCrystRanNum = Math.floor(Math.random() * (12 - 1 + 1) + 1);
-            let yellowCrystRanNum = Math.floor(Math.random() * (12 - 1 + 1) + 1);
-            let greenCrystRanNum = Math.floor(Math.random() * (12 - 1 + 1) + 1);
-            // console.log(targetRanNum);
-            $("#target-randomNum").text(targetRanNum);
-
-            let totalNum = 0;
-            let wins = 0;
-            let losses = 0;
-
-            function reset() {
-                targetRanNum = Math.floor(Math.random() * (120 - 19 + 1) + 19);
-                $("#target-randomNum").text(targetRanNum);
-                totalNum = 0;
-                $("#yourTotalNum").text(totalNum);
-            }
+        </div><!-- end of crystals div -->
 
 
-            function getWinOrLoss() {
-                if (totalNum === targetRanNum) {
-                    wins++;
-                    $("#win").text("Wins: " + wins);
-                    $("#display-result").text("You won!")
-                    reset();
+        <div id="yourTotal">
+            <h3 id="totalTitle">Your total score is &colon;</h3>
+            <h3 id="yourTotalNum">0</h3>
+        </div>
 
-                } else if (totalNum > targetRanNum) {
-                    losses++;
-                    $("#loss").text("Losses: " + losses);
-                    $("#display-result").text("You lost this time, try again.")
-                    reset();
-                }
-            };
-
-            $("#red").click(function () {
-                totalNum += redCrystRanNum;
-                console.log(totalNum);
-                $("#yourTotalNum").text(totalNum);
-                getWinOrLoss();
-            });
-
-            $("#blue").click(function () {
-                totalNum += blueCrystRanNum;
-                console.log(blueCrystRanNum);
-                $("#yourTotalNum").text(totalNum);
-                getWinOrLoss();
-            });
-
-            $("#yellow").click(function () {
-                totalNum += yellowCrystRanNum;
-                console.log(yellowCrystRanNum);
-                $("#yourTotalNum").text(totalNum);
-                getWinOrLoss();
-            });
-
-            $("#green").click(function () {
-                totalNum += greenCrystRanNum;
-                console.log(greenCrystRanNum);
-                $("#yourTotalNum").text(totalNum);
-                getWinOrLoss();
-
-            });
-
-        }); // end of doc ready function
-    </script>
+    </div>
+    <!--end container div-->
 
 </body>
 
