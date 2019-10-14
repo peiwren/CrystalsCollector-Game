@@ -111,7 +111,6 @@ button {
     margin-left: 4.6%;
 }
 
-
 @media screen and (max-width: 979px) {
     .container {
         border: none;
@@ -120,9 +119,13 @@ button {
     #target-randomNum,
     #winLossScores {
         float: none;
-        width: 98%;
+        width: 97.6%;
         text-align: center;
         padding-left: 0;
+    }
+
+    #target-randomNum {
+        width: 92%;
     }
 
     #yourTotal {
@@ -160,16 +163,40 @@ button {
 
 @media screen and (max-width: 639px) {
     #crystals {
-        width: 86%;
-        margin-left: 12%;
+        width: 92%;
+        margin-left: 5%;
         margin-right: auto;
     }
-
 }
 
 @media screen and (max-width: 413px) {
+    img {
+        width: 73%;
+        float: left;
+    }
+
     #crystals {
-        width: 86%;
-        margin-right: 12%;
+        width: 100%;
+    }
+
+    #target-randomNum,
+    #winLossScores {
+        width: 91.5%;
+        float: left;
+    }
+
+    #winLossScores {
+        width: 96.99%;
+    }
+
+    #red,
+    #yellow {
+        margin-left: 2%;
+        margin-right: 0;
+    }
+
+    #blue,
+    #green {
+        margin-left: 0;
     }
 }
