@@ -1,0 +1,175 @@
+body {
+    width: 100%;
+    line-height: 1.6em;
+    font-family: Arial, Helvetica, sans-serif;
+    background: rgb(165, 186, 202);
+}
+
+.container {
+    width: 100%;
+    max-width: 960px;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    border: 10px solid white;
+    background: white;
+}
+
+.target-result-container {
+    width: 100%;
+    margin-top: .6em;
+}
+
+#target-randomNum {
+    font-size: 3em;
+    width: 43%;
+    padding: 1.2em .6em 0 .6em;
+    background: rgb(98, 238, 168);
+    height: 96.6px;
+}
+
+#winLossScores {
+    width: 45.1%;
+    padding: 1.9em .6em .6em 2.1em;
+    height: 116px;
+}
+
+#target-randomNum,
+#winLossScores {
+    float: left;
+}
+
+#yourTotal {
+    background: rgb(37, 65, 65);
+    clear: both;
+}
+
+#totalTitle,
+#yourTotalNum {
+    width: 100%;
+    color: white;
+}
+
+#totalTitle {
+    width: 97.1%;
+    font-size: 1.5em;
+    padding: 1.2em 0 0 1em;
+    height: auto
+}
+
+#yourTotalNum {
+    width: 96.5%;
+    padding: .63em 0 0 .6em;
+    height: 90px;
+}
+
+h1 {
+    font-family: 'Berkshire Swash', cursive;
+    ;
+    font-size: 3.3em;
+    line-height: 1.1em;
+    text-align: center;
+    color: white;
+    background: rgb(49, 43, 34);
+    padding: .8em .5em;
+}
+
+h3 {
+    font-size: 3em;
+}
+
+h5 {
+    font-size: 1em;
+    font-weight: bold;
+    margin-bottom: .6em;
+}
+
+#aboutGame {
+    color: rgb(18, 28, 44);
+    background: rgb(240, 237, 237);
+    /* background: rgb(219, 214, 223); */
+    padding: 2em;
+    clear: both;
+}
+
+#crystals {
+    width: 100%;
+    float: left;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#winLossScores {
+    background: rgb(136, 218, 243);
+}
+
+button {
+    margin-top: .6em;
+    height: auto;
+    background: none;
+    border: none;
+    margin-left: 4.6%;
+}
+
+
+@media screen and (max-width: 979px) {
+    .container {
+        border: none;
+    }
+
+    #target-randomNum,
+    #winLossScores {
+        float: none;
+        width: 98%;
+        text-align: center;
+        padding-left: 0;
+    }
+
+    #yourTotal {
+        text-align: center;
+    }
+
+    #totalTitle,
+    #yourTotalNum {
+        padding-left: 0;
+    }
+
+    #red,
+    #yellow {
+        margin-left: 12%;
+    }
+
+    #blue,
+    #green {
+        margin-left: 3%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    #red,
+    #yellow {
+        margin-left: 1%;
+    }
+
+    #blue,
+    #green {
+        margin-left: .6%;
+    }
+}
+
+@media screen and (max-width: 639px) {
+    #crystals {
+        width: 86%;
+        margin-left: 12%;
+        margin-right: auto;
+    }
+
+}
+
+@media screen and (max-width: 413px) {
+    #crystals {
+        width: 86%;
+        margin-right: 12%;
+    }
+}
