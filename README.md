@@ -1,6 +1,6 @@
 
 ### `CrystalsCollector-Game`
-This is a fun game. You will be given a random number at the start of the game. There are four crystals you can click on. By clicking on a crystal, you will add a specific amount of points to your total score. You win the game by matching your total score to the random number. You lose if your total score goes above the random number. The value of each crystal is hidden from you until you click on it. Each time when the game restarts, the game will change the values of each crystal.
+Crystal Collector is a web application that allows users to play a game where they gain points by clicking different crystals. You win the game by matching your total score to the random given number at the start of the game. You lose if your total score goes above the random number. The value of each crystal is hidden from you until you click on it. Each time when the game restarts, the game will change the values of each crystal.
 
 ### `Main Technology Used:`
 HTML, CSS, JS
@@ -16,5 +16,5 @@ HTML, CSS, JS
 ### `To Access The App Please Follow The Link`
 https://peiwren.github.io/CrystalsCollector-Game/
 
-### `Main Technology Used:`
-HTML, CSS, JS
+### `Description`
+Using the Math.random function allows it to randomly assign a point value.  And after each run, the crystal is dynamically created once again with different point values.
