@@ -17,5 +17,5 @@ HTML, CSS, JS
 https://peiwren.github.io/CrystalsCollector-Game/
 
 ### `Description`
-Use the Math.random function to randomly assign a point value.  And after each run, the crystal is dynamically created once again with different point values.
+Use the Math.random function to randomly assign values for both target number and crystal number.  And after each run, the numbers are dynamically created once again with different point values.
 
