@@ -7,7 +7,7 @@ This is a playful game. You will be given a random number at the start of the ga
 <img src="http://peiwren.com/collector1.jpg">
 -Click on the crystals randomly, win the game by matching your total score to the given number
 <img src="http://peiwren.com/win.jpg">
--Otherwise, lost it
+-Otherwise, lose it
 <img src="http://peiwren.com/lost.jpg">
 
 ### `To Access The App Please Follow The Link`
