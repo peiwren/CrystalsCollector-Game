@@ -10,5 +10,8 @@ This is a playful game. You will be given a random number at the start of the ga
 -Otherwise, lost it
 <img src="http://peiwren.com/lost.jpg">
 
+### `To Access The App Please Follow The Link`
+https://peiwren.github.io/CrystalsCollector-Game/
+
 ### `Main Technology Used:`
 HTML, CSS, JS
