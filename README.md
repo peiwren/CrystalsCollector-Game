@@ -6,7 +6,7 @@ Crystal Collector is a web application that allows users to play a game where th
 HTML, CSS, JS
 
 ### `How The App Works`
--Show a random number (35 in this image)
+-Show a random given number (35 in this image)
 <img src="http://peiwren.com/collector1.jpg">
 -Click on the crystals randomly, win the game by matching your total score to the given number
 <img src="http://peiwren.com/win.jpg">
